@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/video-game-analysis-dashboard/static/css/main.e6c13ad2.css",
+    "main.js": "/video-game-analysis-dashboard/static/js/main.fc30253b.js",
+    "static/js/766.25be0950.chunk.js": "/video-game-analysis-dashboard/static/js/766.25be0950.chunk.js",
+    "static/js/453.10a1164c.chunk.js": "/video-game-analysis-dashboard/static/js/453.10a1164c.chunk.js",
+    "index.html": "/video-game-analysis-dashboard/index.html",
+    "main.e6c13ad2.css.map": "/video-game-analysis-dashboard/static/css/main.e6c13ad2.css.map",
+    "main.fc30253b.js.map": "/video-game-analysis-dashboard/static/js/main.fc30253b.js.map",
+    "766.25be0950.chunk.js.map": "/video-game-analysis-dashboard/static/js/766.25be0950.chunk.js.map",
+    "453.10a1164c.chunk.js.map": "/video-game-analysis-dashboard/static/js/453.10a1164c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.fc30253b.js"
+  ]
+}
