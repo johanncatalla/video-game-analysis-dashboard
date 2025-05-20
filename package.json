@@ -14,7 +14,7 @@
     "recharts": "^2.15.3",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://yourusername.github.io/video-game-analysis-dashboard",
+  "homepage": "https://johanncatalla.github.io/video-game-analysis-dashboard",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -42,6 +42,9 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "autoprefixer": "^10.4.14",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.0"
   }
 }

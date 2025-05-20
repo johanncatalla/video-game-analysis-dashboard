@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, ScatterChart, Scatter, ZAxis, LabelList, ComposedChart, Area, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
 
-const GameAnalysisDashboard = () => {
+function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -11,8 +11,10 @@ const GameAnalysisDashboard = () => {
   useEffect(() => {
     const processData = async () => {
       try {
-        const response = await fetch(process.env.PUBLIC_URL + '/videogames_final.csv');
-        const fileContent = await response.text();        
+        // Using fetch API instead of window.fs.readFile for GitHub Pages compatibility
+        const response = await fetch(`${process.env.PUBLIC_URL}/videogames_final.csv`);
+        const fileContent = await response.text();
+        
         // Use Papaparse to parse CSV
         const Papa = await import('papaparse');
         const result = Papa.default.parse(fileContent, {
@@ -539,10 +541,10 @@ const GameAnalysisDashboard = () => {
                     <YAxis dataKey="genre" type="category" width={150} tick={{ fill: '#4b5563' }} />
                     <Tooltip 
                       content={<CustomTooltip />}
-                      formatter={(value) => [`${value.toFixed(2)}`, 'Average Price']}
+                      formatter={(value) => [`$${value.toFixed(2)}`, 'Average Price']}
                     />
                     <Bar dataKey="avgPrice" fill="#10b981" name="Average Price ($)">
-                      <LabelList dataKey="avgPrice" position="right" formatter={(value) => `${value.toFixed(2)}`} fill="#4b5563" />
+                      <LabelList dataKey="avgPrice" position="right" formatter={(value) => `$${value.toFixed(2)}`} fill="#4b5563" />
                     </Bar>
                   </BarChart>
                 </ResponsiveContainer>
@@ -614,7 +616,7 @@ const GameAnalysisDashboard = () => {
                   <Tooltip 
                     cursor={{ strokeDasharray: '3 3' }}
                     formatter={(value, name, props) => {
-                      if (name === 'price') return [`${value}`, 'Price'];
+                      if (name === 'price') return [`$${value}`, 'Price'];
                       return [value, name];
                     }}
                     content={({ active, payload }) => {
@@ -904,6 +906,6 @@ const GameAnalysisDashboard = () => {
       </div>
     </div>
   );
-};
+}
 
-export default GameAnalysisDashboard;
+export default App;
